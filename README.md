@@ -27,6 +27,7 @@ Si estás en DeAcero, no necesitas entender el medio MS. Si estás en Kronos, no
 * **Genealogía del conocimiento.** Cada decisión técnica tiene historia. "Así lo hacíamos" no es argumento. "Así llegamos aquí, estas eran las condiciones, y estas son las razones por las que hoy sigue siendo válido o ya no lo es" sí lo es. La documentación no es carga administrativa: es la memoria del sistema.
 * **Pensamiento en grafos (Filosofía).** Todo —dependencias de módulos, relaciones causales, conversaciones difíciles— tiene estructura de grafo. Cuando un problema no tiene solución obvia, lo primero que hago es dibujarlo para entender sus nodos y bordes antes de intentar resolverlo.
 * **Automatización como reflejo.** Si un proceso manual es predecible, repetirlo es un desperdicio de ciclo cognitivo que le robamos a la arquitectura del sistema.
+* **Análisis de fallo por defecto.** Antes de ejecutar cualquier cosa —un deploy, un experimento, un cambio de arquitectura— mi primer movimiento es preguntar qué podría salir mal. No es pesimismo; es falsación aplicada antes de que el error cueste. El pre-mortem no es una reunión ni un checklist: es cómo pienso. Cuando algo sale mal de todas formas, el post-mortem es la única respuesta aceptable: qué falló, por qué, qué cambia en el proceso. Un incidente sin post-mortem es conocimiento que el sistema pagará dos veces.
 
 ## Cómo trabajamos juntos
 
@@ -62,6 +63,7 @@ Estos no son aspiracionales. Son el estándar de entrada.
 * **Los LLMs no son oráculos.** Dales roles claros, contexto preciso, y diseña asumiendo que olvidan. Las alucinaciones no son bugs del modelo; son bugs del prompt.
 * **SOLID y KISS no son referencias de nombre.** SOLID significa que cada módulo tiene una razón para cambiar, no diez. KISS significa que si tu solución necesita una presentación de 20 slides para explicarse, está equivocada.
 * **Análisis estático en pre-commit.** Sin excepción. El código muerto no existe en este equipo.
+* **RFC o propuesta antes de ejecutar; ADR para cristalizar la decisión.** En código: cuando un cambio cruza ≥ 2 módulos o proyectos, se escribe un RFC ligero para generar consenso antes del ADR. En laboratorio: ningún experimento comienza sin protocolo escrito y revisado. El sustrato cambia; la disciplina no. La cadena es invariable: `Propuesta → Consenso → Ejecución → Registro`. El ADR (código) y el cambio de protocolo (laboratorio) son el registro: inmutables, versionados, con trazabilidad completa de la decisión.
 * **Edición función por función.** No refactorizamos todo a la vez; cambiamos una función, la probamos, continuamos.
 * **Automatización forzosa.** La segunda vez que hagas algo manualmente, escribe el script.
 
