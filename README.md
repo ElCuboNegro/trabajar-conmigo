@@ -1,110 +1,64 @@
 # Trabajar conmigo
 
-**Juan José Albán Ortiz**
-*Tech Lead @ Grupo DeAcero · Cofundador, Kronos BioLabs*
+Soy Juan José Albán, Tech Lead en Grupo DeAcero. Escribí esta guía para que trabajar conmigo sea fácil desde el primer día, sin que tengas que adivinar cómo pienso ni por qué insisto en ciertas cosas.
 
-## Quién soy y cómo funciono
+## Cómo trabajo
 
-Trabajo en la intersección entre dos clases de sistemas complejos: los que se construyen en código y los que crecen. En DeAcero, orquesto agentes de inteligencia artificial sobre infraestructura industrial. En Kronos BioLabs, cultivamos organismos vivos con ambición de escala. No son vidas paralelas: son el mismo problema —emergencia, estado, dependencias no lineales, fallo en cascada— ejecutado en sustratos distintos.
+Me gusta decidir con evidencia y dejar rastro escrito de las decisiones. Antes de meterle a algo grande hago un pre-mortem: me tomo un rato para pensar qué puede salir mal y cómo nos vamos a dar cuenta si pasa. Cuando diseño una prueba o un experimento, busco que pueda fallar; si solo puede salir bien, no me está diciendo nada.
 
-Mi modelo mental tiene raíces más antiguas que los frameworks que usamos. Pienso en grafos de emanación antes de pensar en DAGs: cómo el conocimiento fluye a través de niveles de abstracción, cómo cada nodo hereda restricciones de los superiores y propaga efectos hacia los inferiores. Cuando te pregunto "¿qué hay arriba de esto en el árbol?" no estoy siendo filosófico; estoy diagnosticando el sistema.
+Las decisiones técnicas importantes quedan documentadas con su contexto: por qué se tomaron, qué alternativas descartamos y qué tendría que cambiar para revisarlas. No es burocracia, es que en seis meses nadie se acuerda de nada, incluido yo.
 
-Escribo poesía épica y ficción científica. Construí una mitología original para modelar fuerzas primordiales en sistemas de IA. Estudio hebreo y ladino. Investigo mi genealogía sefardí. Estos no son hobbies: son los instrumentos con los que proceso complejidad que no cabe en un diagrama de arquitectura. Si alguna vez ves un documento mío con un nombre propio y cosmología propia, significa que el sistema es suficientemente complejo como para necesitarlos.
+Y si un proceso manual es predecible y repetitivo, lo automatizo. Prefiero pagar el costo una vez y no cada semana.
 
-Todo lo que sé, lo documento. Si no está en la **Knowledge Database**, no existe. Esto no es obsesión burocrática: es la única forma honesta de trabajar con sistemas que duran más que cualquier sprint. Durante tu onboarding, recibirás los accesos y la topología de la Knowledge Database. Tu primer commit será documentar que leíste y entendiste este documento.
+## Qué puedes esperar de mí
 
-## Por qué estoy en estos dos roles simultáneamente
+Feedback directo y a tiempo. Si algo no me convence te lo digo, y espero lo mismo de vuelta; nada de eso es personal. Los errores se documentan y se corrigen, no se castigan; lo que sí me incomoda es tropezar dos veces con la misma piedra sin haber escrito nada la primera vez. Y si algo se va a retrasar o está en riesgo, te vas a enterar por mí antes que por el resultado.
 
-No es dispersión. Es coherencia sistémica que desde afuera parece multiplicidad.
+## Qué espero de ti
 
-DeAcero me permite ejecutar a escala industrial: datos reales, infraestructura real, consecuencias reales. Kronos BioLabs me permite aplicar los mismos principios de orquestación y gestión de estado a sistemas que no tienen API, solo responden a condiciones, nutrientes y tiempo. La pregunta que me obsesiona en ambos contextos es la misma: ¿cómo diseño un sistema que aprenda, se adapte y falle de forma controlada?
+Que digas lo que piensas, sobre todo cuando crees que estoy equivocado; callarse un desacuerdo sale más caro que discutirlo. Que los cambios que afectan a más de una persona se propongan por escrito, aunque sea en corto. Y comunicación asíncrona por defecto: dame contexto suficiente para responderte sin tener que agendar una reunión.
 
-Si estás en DeAcero, no necesitas entender el medio MS. Si estás en Kronos, no necesitas dominar LangGraph. Lo que ambos equipos necesitan entender es cómo pienso sobre sistemas, porque eso no cambia con el sustrato.
+## Disponibilidad
 
-## El método
+Respondo mensajes asíncronos en máximo 24 horas hábiles. Observo el calendario judío, así que durante Shabat y festividades no estoy disponible; lo dejo marcado en mi calendario con anticipación. Para incidentes críticos en producción aplica el esquema de on-call que acordemos, con tiempos de respuesta definidos.
 
-* **Falsación antes que validación.** No me interesa que me demuestres que algo funciona; me interesa que intentes demostrar que falla. Un experimento que solo podía tener éxito no era un experimento. El método científico no es validar lo que creemos; es intentar demolerlo con rigor.
-* **Genealogía del conocimiento.** Cada decisión técnica tiene historia. "Así lo hacíamos" no es argumento. "Así llegamos aquí, estas eran las condiciones, y estas son las razones por las que hoy sigue siendo válido o ya no lo es" sí lo es. La documentación no es carga administrativa: es la memoria del sistema.
-* **Pensamiento en grafos (Filosofía).** Todo —dependencias de módulos, relaciones causales, conversaciones difíciles— tiene estructura de grafo. Cuando un problema no tiene solución obvia, lo primero que hago es dibujarlo para entender sus nodos y bordes antes de intentar resolverlo.
-* **Automatización como reflejo.** Si un proceso manual es predecible, repetirlo es un desperdicio de ciclo cognitivo que le robamos a la arquitectura del sistema.
-* **Análisis de fallo por defecto.** Antes de ejecutar cualquier cosa —un deploy, un experimento, un cambio de arquitectura— mi primer movimiento es preguntar qué podría salir mal. No es pesimismo; es falsación aplicada antes de que el error cueste. El pre-mortem no es una reunión ni un checklist: es cómo pienso. Cuando algo sale mal de todas formas, el post-mortem es la única respuesta aceptable: qué falló, por qué, qué cambia en el proceso. Un incidente sin post-mortem es conocimiento que el sistema pagará dos veces.
+## Principios técnicos
 
-## Cómo trabajamos juntos
+Los estándares que aplico y pido en los proyectos que lidero: infraestructura como código y todo versionado; análisis estático en pre-commit, sin excepciones; observabilidad pensada desde el diseño y no como parche posterior; máquinas de estado explícitas en los sistemas de agentes, porque un flujo implícito no se puede auditar; y SOLID y KISS como criterio real de revisión, no como póster en la pared. Las decisiones siguen un camino fijo: propuesta escrita, discusión, decisión, registro. De eso van las siguientes dos secciones.
 
-* **Tienes la obligación de disentir.** No es invitación; es requisito del rol. Si identificas que una hipótesis es incorrecta, que una arquitectura va a fallar, o que una decisión tiene consecuencias no consideradas, detén la ejecución y dímelo. Prefiero retrasar un sprint a corregir dirección equivocada en producción. Lo que no acepto es el silencio cómplice: es más costoso que el desacuerdo.
-* **Seguridad psicológica garantizada.** La obligación de disentir funciona solo si el costo de disentir es bajo. Yo lo garantizo desde mi lado: recibo el desacuerdo sin represalia, reviso mis posiciones cuando el argumento lo merece, y doy crédito cuando alguien tiene razón y yo estaba equivocado.
-* **Sé inquisitivo con precisión.** Pregunta cuando no entiendas. Pero formula la pregunta después de haber intentado responderla tú mismo. "No entiendo X" es diferente de "intenté entender X, llegué hasta Y, y aquí es donde necesito tu contexto."
-* **Los errores son del proceso, no de la persona.** En I+D, los errores son la señal, no el ruido. Lo que espero de cada error es documentación: qué fallamos, por qué, qué cambia en el proceso. Un error sin aprendizaje documentado es el único tipo que no acepto. No hay número máximo de errores distintos; sí hay cero tolerancia para el mismo error dos veces.
-* **El feedback es bidireccional y explícito.** No gestiono por silencio. Cuando algo funciona bien y vale la pena reforzarlo, lo digo: el reconocimiento es información del sistema, no cortesía. Cuando algo falla, también lo digo con la misma claridad. Espero exactamente lo mismo de ti hacia mí.
+## Cómo decidimos
 
-## Logística operativa
+Toda decisión relevante se escribe antes de construirse. Usamos tres tipos de documento según lo que se esté decidiendo: un PRD captura una necesidad de negocio, un RFC propone cambios amplios (de varios sistemas, de proceso o de metodología) y un ADR registra una decisión de arquitectura concreta. Cada uno vive donde se discute, no en una carpeta que nadie abre, y tiene autor y estado visibles.
 
-* **Calendario judío.** Respeto Shabat (viernes al anochecer – sábado al anochecer) y las festividades del calendario hebreo: Rosh Hashaná, Yom Kipur, Sukot, Pésaj y Shavuot, entre otras. Estos bloques están marcados en el calendario compartido. No necesitan explicación, pero sí necesitan que los respetes sin asumir que puedes interrumpirlos.
-* **On-call y disponibilidad a las 3 a.m.** Cuando digo que necesito poder contactarte cuando una instancia cae en plena noche, no estoy describiendo disponibilidad libre: hay una rotación de guardia con SLA de respuesta para incidentes críticos. Si estás en guardia activa, necesito que seas alcanzable. Fuera de esa rotación, desconéctate sin culpa. Avísame con anticipación si necesitas ajustar la rotación y lo reorganizamos.
-* **Reuniones.** A tiempo, con agenda previa, cámara encendida, auriculares con cancelación de ruido. Si necesitas cancelar o reprogramar, hazlo con la mayor anticipación posible. Las emociones son bienvenidas mientras haya respeto; las leo como señal de que algo importa, no como inestabilidad.
-* **Comunicación asíncrona.** Respondo en máximo 24 horas fuera de mis períodos de descanso. Si me mencionas sin pedirme acción explícita, asumo que solo necesitas visibilidad. Si necesitas que yo actúe, escríbeme directamente. Esta regla no tiene excepciones.
-* **Contexto físico.** Trabajo desde un monasterio de casi 300 años en La Candelaria, Bogotá. En las videollamadas es probable que me veas preparando café de especialidad. Cronos, mi gato, no respeta agendas. Ninguno de los dos debería ser una sorpresa después de leer esto.
+¿Cuándo escribir uno? Mi regla es simple: si te estás preguntando si amerita propuesta, la amerita. En concreto: construir algo desde cero, meter una dependencia o herramienta nueva al stack, un contrato entre sistemas, algo que toca a más de un equipo, o que "habría que reescribir esto" te haya cruzado la mente, porque un rewrite siempre es riesgo alto. Lo que es local, reversible o medible objetivamente va directo a un PR y ya. En caso de duda, cinco minutos de conversación resuelven si vale la pena escribirlo.
 
-## Lo que puedes esperar de mí
+Un RFC no es pedir permiso. La pregunta que hace es otra: ¿qué se nos está escapando? Cambiar una decisión en un documento cuesta poco; cambiarla en producción cuesta caro. El proceso que uso viene del [Thousand Brains Project](https://docs.thousandbrains.org/docs/request-for-comments-rfc) y de la [guía de Juan Pablo Buriticá](https://medium.com/juans-and-zeroes/a-thorough-team-guide-to-rfcs-8aa14f8e757c), ajustado con lo que hemos aprendido operándolo en el equipo:
 
-* Revisión genuina de tus PRs y propuestas de arquitectura. No firmo sin leer.
-* Feedback claro cuando algo falla. Reconocimiento explícito cuando algo supera expectativas. Silencio cuando simplemente cumples no es mi estilo: el silencio es ruido, no señal.
-* Cumplimiento estricto de mis compromisos. Si no voy a poder cumplir, te aviso antes, no después.
-* Honestidad radical, incluyendo cuando yo me equivoco.
-* Oportunidades reales de crecimiento técnico. No promesas genéricas de "aprender mucho".
+1. **Proponer.** Revisa lo ya decidido para no reabrir discusiones cerradas, valida la idea en corto con alguien, y escribe sobre la plantilla común: qué propones y por qué, impacto, alternativas que consideraste y qué estás sacrificando. No lo pulas de más; un borrador temprano que recibe comentarios vale más que un documento perfecto que llega tarde. Si es tu primer RFC, te empareja con alguien senior que te respalde.
+2. **Comentar.** Aquí está el valor del proceso. Los comentarios son perspectivas, no argumentos que ganar: cada quien trae los riesgos que ve desde lo suyo, incluida gente de producto, negocio u operación cuando el cambio los toca. La ventana de comentarios tiene fecha: entre dos días hábiles y una semana, extensible si hay una razón. Participar es opcional, pero la ventana es real; quien no comentó a tiempo ya no puede reclamar después que no lo consultaron, porque la ventana estuvo abierta y con registro. El silencio no es veto ni aprobación. Si un comentario viene marcado `[newbie]`, su autor está avisando que le falta contexto o confianza en ese terreno, y se le responde para enseñar, nunca para exhibir; eso aplica igual al senior opinando fuera de su dominio. Y si la discusión se calienta por escrito, mejor una reunión corta y la conclusión vuelve al documento.
+3. **Decidir.** Decide quien es dueño del dominio afectado, no un comité. Se espera que escuche todo el feedback, no que consiga unanimidad; el diseño por comité diluye la responsabilidad hasta que nadie la tiene. Cerrada la ventana, el autor resuelve (promover, rechazar o extender) y la razón queda escrita. Quien escribe la propuesta no está obligado a implementarla; cualquiera del equipo puede tomarla. Y una cosa que hago a propósito: asignar la autoría de un RFC a alguien que normalmente habla poco. Ser autor te vuelve responsable visible de una idea sin necesidad de ser el que más grita.
+4. **Archivar.** Un RFC cerrado es historia, no documentación viva; no se actualiza cuando el sistema evoluciona, para eso están los ADRs y la documentación de producción. Sirve para onboarding y para no repetir discusiones. Uno rechazado también se archiva con su porqué: le ahorra la misma conversación al siguiente.
 
-## Principios de ingeniería
+Sobre herramientas no me caso con ninguna. Cualquier medio con comentarios por hilo que quede archivado y buscable funciona; la herramienta nunca es excusa para no escribir.
 
-Estos no son aspiracionales. Son el estándar de entrada.
+## Cómo le damos seguimiento al trabajo
 
-* **Grafos de estado explícitos.** Todo flujo de agentes y LLMs debe verse como nodos, bordes y estado. Si un agente no tiene estado y bordes definidos, no se aprueba el PR. Si no puedes dibujarlo, no puedes construirlo correctamente.
-* **Infraestructura como código.** Todo reproducible, todo containerizado, todo versionado. Si solo corre en tu máquina, no existe.
-* **MLOps no es opcional.** Sin observabilidad, sin versionado de modelos, sin pipelines reproducibles, estás haciendo magia, no ingeniería.
-* **Los LLMs no son oráculos.** Dales roles claros, contexto preciso, y diseña asumiendo que olvidan. Las alucinaciones no son bugs del modelo; son bugs del prompt.
-* **SOLID y KISS no son referencias de nombre.** SOLID significa que cada módulo tiene una razón para cambiar, no diez. KISS significa que si tu solución necesita una presentación de 20 slides para explicarse, está equivocada.
-* **Análisis estático en pre-commit.** Sin excepción. El código muerto no existe en este equipo.
-* **RFC o propuesta antes de ejecutar; ADR para cristalizar la decisión.** En código: cuando un cambio cruza ≥ 2 módulos o proyectos, se escribe un RFC ligero para generar consenso antes del ADR. En laboratorio: ningún experimento comienza sin protocolo escrito y revisado. El sustrato cambia; la disciplina no. La cadena es invariable: `Propuesta → Consenso → Ejecución → Registro`. El ADR (código) y el cambio de protocolo (laboratorio) son el registro: inmutables, versionados, con trazabilidad completa de la decisión.
-* **Edición función por función.** No refactorizamos todo a la vez; cambiamos una función, la probamos, continuamos.
-* **Automatización forzosa.** La segunda vez que hagas algo manualmente, escribe el script.
+Parto de una separación que me ha ahorrado muchos dolores: la decisión, el trabajo y la vista son tres cosas distintas y viven en lugares distintos. Las decisiones en sus documentos de discusión, el trabajo en issues, y la planeación en tableros que se derivan de los otros dos. Nunca duplicamos uno para simular el otro.
 
-### Módulo DeAcero: ML/AI Engineering
+De esa separación salen las reglas con las que opero:
 
-Nuestro stack central es el **Google Agent Development Kit (ADK)** con la **API de Anthropic** como backend de inferencia. Necesitas dominar ambos a profundidad; no hay atajos aquí.
+- **Todo se puede rastrear de punta a punta.** Una decisión con obra genera un epic, el epic se parte en issues, los issues se amarran a sus PRs y estos a la versión que los entrega. Esa cadena la verifican herramientas, no la memoria de nadie. Cuando se rompe (trabajo sin decisión, o una decisión ya implementada que nadie promovió), el sistema lo marca.
+- **La prosa no es una relación.** Un "depende de #M" escrito en un comentario se pierde a la primera edición; la primitiva nativa del tracker (sub-issue, blocked-by, milestone, review request) sobrevive. Si la herramienta tiene la primitiva, se usa la primitiva. El texto libre acompaña, no sustituye.
+- **Un issue se cierra cuando el cambio llega a producción**, no cuando se ve bien en el ambiente de pruebas. Si el tablero se ve estancado porque hay mucho terminado y poco liberado, el tablero está haciendo su trabajo: nos está enseñando un problema real de cadencia. Mover el punto de cierre para que se vea bonito es arreglar el termómetro en lugar de la fiebre.
+- **Revisar un PR es trabajo, no un favor.** Una revisión solicitada tiene dueño visible, aparece en el tablero y tiene un tiempo comprometido de primera respuesta, medido en días hábiles para que los fines de semana no generen alertas falsas. El "porfa revisen" en el chat no cuenta como asignación.
+- **Una regla que no bloquea nada es una sugerencia.** Cada criterio de "terminado" debe ser un check que impide el merge, o no cuenta. Los umbrales de alerta los arrancamos conservadores y los apretamos con datos, porque una alerta que la gente aprendió a ignorar cuesta más que haber empezado flojo.
+- **Agentes de IA sí, pero con humano en el gate.** Los agentes proponen: parten epics en tareas, pre-revisan código. Nada se materializa sin aprobación humana explícita, un agente jamás aprueba el trabajo de otro agente, y todo merge tiene un humano con nombre que responde por él. Con agentes generando código, el cuello de botella ya no es escribir sino integrar, y el review humano se vuelve más importante, no menos: se gradúa por riesgo en lugar de aplicarse parejo.
+- **El sistema señala, la gente decide.** La automatización de integridad marca inconsistencias y sugiere el arreglo, pero nunca cambia el estado de una decisión o un issue por su cuenta. Un estado que cambió solo parece correcto, y eso es peor que el desorden que intentaba corregir.
 
-Los flujos de agentes se diseñan como grafos de estado explícitos: nodos con responsabilidades delimitadas, bordes con condiciones de transición claras, estado gestionado de forma reproducible. Un agente sin estado explícito es un sistema sin diagnóstico posible. Todo está containerizado. Los tests se ejecutan desde el container. El análisis estático corre en pre-commit. No hay código muerto. La edición se hace función por función.
+## Stack actual
 
-### Módulo Kronos BioLabs: Biotecnología
-
-Nuestro proceso de producción opera con la misma lógica que el código: protocolo versionado, documentado, falsable. Los protocolos de laboratorio son contratos, no guías. Si cambias una variable sin documentarla, contaminaste el experimento.
-
-Necesitas entender los fundamentos del cultivo de tejidos vegetales y el medio MS (Murashige & Skoog) no como biología académica sino como el sustrato sobre el que construimos el sistema. Las variables no controladas en laboratorio son equivalentes a los race conditions en producción: destructivas y difíciles de diagnosticar en retrospectiva.
+En DeAcero trabajo principalmente con Google Agent Development Kit y la API de Anthropic.
 
 ---
 
-## Material formativo
-
-No es una lista de señalización cultural. Es la arquitectura intelectual mínima para entender cómo pienso.
-
-### Técnico / Operativo
-
-| Material | Por qué importa |
-| --- | --- |
-| **Google ADK + API de Anthropic** | **[Para DeAcero]** Nuestra base técnica. Sin esto, no puedes participar en decisiones de arquitectura. |
-| **LangGraph Documentation** | **[Para DeAcero]** El framework con el que modelamos flujos de agentes con estado explícito. |
-| **Agentic Design Patterns** – *Andrew Ng* | **[Para DeAcero]** Los patrones recurrentes en sistemas multiagente. Te ahorra reinventar lo que ya tiene nombre y consecuencias conocidas. |
-| **The Product-Minded Engineer** | Porque construimos para que alguien lo use. El ingeniero que no entiende el producto construye maquinaria perfecta para el problema equivocado. |
-
-### Liderazgo y cultura de trabajo
-
-| Material | Por qué importa |
-| --- | --- |
-| **Maker's Schedule, Manager's Schedule** – *Paul Graham* | Para entender por qué bloqueo tiempo de trabajo profundo y por qué las reuniones tienen costo real, no solo duración. |
-| **Peacetime CEO / Wartime CEO** – *Ben Horowitz* | Para entender en qué modo estoy en cada momento y qué tipo de decisiones corresponden a cada uno. |
-| **The Jeff Bezos School of Long-Term Thinking** | Porque la arquitectura que sacrifica el largo plazo por la velocidad del sprint no es arquitectura; es deuda con interés compuesto. |
-
-### Ciencia y visión de largo plazo
-
-| Material | Por qué importa |
-| --- | --- |
-| **Fundamentos de cultivo de tejidos vegetales y medio MS** | **[Para Kronos]** El laboratorio tiene su propia lógica sistémica; sin este piso no puedes participar en las decisiones de protocolo. |
-| **Dune** – *Frank Herbert* | Porque ningún otro texto modela con la misma densidad la ecología de sistemas complejos, la gestión del conocimiento intergeneracional y el colapso de civilizaciones por no entender sus dependencias críticas. Es el texto más honesto que conozco sobre lo que significa diseñar para el largo plazo y vivir con las consecuencias de haberlo hecho mal. |
+Si algo de lo que dice este documento no se cumple en la práctica, dímelo. El feedback bidireccional también aplica a este README.
